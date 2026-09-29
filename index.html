@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="音変猿">
+<meta name="theme-color" content="#f6f7f4">
+<title>発音変化スライム狩り</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ホーム -->
+<main id="home" class="screen">
+  <h1 class="title">発音変化<br>スライム狩り</h1>
+
+  <div class="levels" id="levels" role="radiogroup" aria-label="出題範囲">
+    <button data-level="all" class="chip">全部</button>
+    <button data-level="1" class="chip">単語</button>
+    <button data-level="2" class="chip">語句</button>
+    <button data-level="3" class="chip">短文</button>
+  </div>
+
+  <button id="wildBtn" class="mode wild">
+    <span class="mode-name">野生スライム狩り</span>
+    <span class="mode-sub" id="wildCount"></span>
+  </button>
+
+  <h2 class="section">単独スライム狩り</h2>
+  <div id="catList" class="cat-list"></div>
+</main>
+
+<!-- 出題 -->
+<main id="quiz" class="screen" hidden>
+  <header class="bar">
+    <button id="backBtn" class="back" aria-label="戻る">‹</button>
+    <span id="modeLabel" class="mode-label"></span>
+    <span class="spacer"></span>
+  </header>
+
+  <section class="stage">
+    <div id="qText" class="q-text" lang="ko"></div>
+
+    <div id="answer" class="answer" hidden>
+      <div id="aPron" class="a-pron" lang="ko"></div>
+      <div id="aCats" class="a-cats"></div>
+      <div id="aSteps" class="a-steps" lang="ko" hidden></div>
+      <div id="aNote" class="a-note" hidden></div>
+      <button id="audioBtn" class="audio" hidden aria-label="音声を再生">🔊</button>
+    </div>
+  </section>
+
+  <footer class="actions">
+    <button id="revealBtn" class="primary">答えを見る</button>
+    <button id="nextBtn" class="primary" hidden>次へ</button>
+  </footer>
+</main>
+
+<script src="data/questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
