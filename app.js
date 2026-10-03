@@ -15,7 +15,7 @@
     levels: $("levels"), wildBtn: $("wildBtn"), wildCount: $("wildCount"), catList: $("catList"),
     backBtn: $("backBtn"), modeLabel: $("modeLabel"),
     qText: $("qText"), answer: $("answer"),
-    aPron: $("aPron"), aCats: $("aCats"), aSteps: $("aSteps"), aNote: $("aNote"),
+    aPron: $("aPron"), aJa: $("aJa"), aCats: $("aCats"), aSteps: $("aSteps"), aNote: $("aNote"),
     audioBtn: $("audioBtn"), revealBtn: $("revealBtn"), nextBtn: $("nextBtn"),
   };
 
@@ -115,6 +115,9 @@
 
     el.aPron.textContent = "[" + q.pron + "]";
     sizeClass(el.aPron, q.pron);
+
+    el.aJa.textContent = q.ja || "";
+    el.aJa.hidden = !q.ja;
 
     el.aCats.innerHTML = "";
     if (q.change === false) {
